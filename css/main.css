@@ -1,0 +1,231 @@
+
+@font-face {
+    font-family: Futura;
+    src: url("../assets/fonts/futura.ttf");
+}
+
+@font-face {
+    font-family: Georgia;
+    src: url("../assets/fonts/georgia.ttf");
+}
+
+:root {
+    --primary-color: #6ED5B8;
+    --bg-color: #202F66;
+    --gray: #d3d6e1;
+    font-size: 16px;
+}
+
+body, html {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+header {
+    width: 60%;
+    height: 112px;
+    background: var(--primary-color);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20px;
+    padding: 17.17px 32px;
+    border-radius: 100px;
+    box-sizing: border-box;
+    display: flex;
+    place-items: center;
+    margin: 0 auto;
+    z-index: 1;
+
+
+    img {
+        width: 182.72px;
+        height: 53.2px;
+        opacity: 0;
+        animation: lightSpeedInRight 1s .5s forwards;
+        transition: all ease .5s;
+    }
+
+    a:hover img{
+        filter: drop-shadow(-7px 7px 1px #0000002f)
+    }
+
+    @media (width > 1000px) {
+        
+    }
+}
+
+main {
+
+    background: linear-gradient( 180deg, var(--gray), var(--bg-color) 70%); 
+    color: #fff;
+    padding: 300px 0 187px;
+    text-align: center;
+
+    .container {
+        max-width: 940px;
+        display: flex;
+        flex-direction: column;
+        gap: 34.65px;
+        margin: 0 auto;
+
+    }
+
+    h1 {
+        font-family: Georgia;
+        font-size: 3.75rem;
+        line-height: 4rem;
+        margin: 0 0 27px;
+        opacity: 0;
+        animation:fadeInUp 1s 1s forwards;
+        
+        strong {
+            font-family: Futura;
+            color: var(--primary-color);
+        }
+    }
+
+    p {
+        font-family: Futura;
+        font-size: 1.375rem;
+        max-width: 50%;
+        margin: 0 auto;
+
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 29.22px;
+        text-align: center;
+
+        opacity: 0;
+        animation:fadeInUp 1s 1.3s forwards;
+
+    }
+
+    button {
+        background: var(--primary-color);
+        color: var(--bg-color);
+        border-radius: 8.66px;
+        border: none;
+        padding: 23.65px 55.45px;
+        box-shadow: 0px 4px 15px 0px #0000001A;
+
+        font-size: 1.125rem;
+        margin: 0 auto;
+        font-weight: bold;
+        transition: all ease .5s;
+        cursor: pointer;
+
+        opacity: 0;
+        animation:fadeInUp 1s 1.5s forwards;
+
+        &:hover {
+            color: var(--primary-color);
+            background-color: #fff;
+        }
+
+    }
+}
+
+footer {
+    font-family: Futura;
+
+    img {
+        margin-bottom: 20px;
+    }
+
+    h3 {
+        font-family: Georgia;
+        font-size: 1.875rem;
+        font-weight: 100;
+        color: var(--bg-color);
+        margin: 0 0 42px;
+    }
+
+    a,
+    p {
+        line-height: 1.3125;
+        margin: 0 0 10px;
+    }
+
+    a {
+        display: block;
+        text-decoration: underline;
+        cursor: pointer;
+
+        img {
+            transition: transform ease-in-out .2s;
+        }
+
+        &:hover img {
+            transform: scale(1.2);
+        }
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(295px, 1fr));
+        padding: 48px 1rem 62px;
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    .social {
+        display: flex;
+        gap: 1rem;
+    }
+
+    .subFooter {
+        padding: 24.09px 0;
+        text-align: center;
+        background: var(--bg-color);
+        overflow: hidden;
+        
+        a {
+            color: #fff;
+        }
+
+    }
+
+    @media (width < 600px) {
+        text-align: center;
+
+        .container {
+            gap: 2rem;
+        }
+        .social {
+            justify-content: center;
+        }
+    }
+}
+
+/* animations */
+@keyframes fadeInUp {
+    0% {
+      opacity:0;
+      transform:translate3d(0,100%,0)
+    }
+    to {
+      opacity:1;
+      transform:translateZ(0)
+    }
+}
+
+@keyframes lightSpeedInRight {
+    0% {
+      opacity:0;
+      transform:translate3d(100%,0,0) skewX(-30deg)
+    }
+    60% {
+      opacity:1;
+      transform:skewX(20deg)
+    }
+    80% {
+        opacity:1;
+      transform:skewX(-5deg)
+    }
+    to {
+        opacity:1;
+      transform:translateZ(0)
+    }
+  }
